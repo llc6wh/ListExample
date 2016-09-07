@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewParent;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,12 +54,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // Called for active message buttons for each contact
+    // Called tapping on an online contact
     public void sendMessage(View view) {
-        // Get the active contact name from the item in the list
-        TextView name = (TextView) findViewById(R.id.contact_name) ;
-        Log.d("ListExample", "sendMessage to " + name.getText().toString());
+        TextView currentItem = (TextView)view;
+        Log.d("ListExample", "sendMessage to " + currentItem.getText().toString());
         // Make Toast
-        Toast.makeText(this, "Sending message to " + name.getText().toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Sending message to " + currentItem.getText().toString(), Toast.LENGTH_LONG).show();
     }
 }
