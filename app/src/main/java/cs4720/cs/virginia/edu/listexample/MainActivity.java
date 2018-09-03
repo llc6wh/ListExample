@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     // Called when you tap the Add Contact button
     public void addContact(View view) {
         // Make sure it is a name
-        if(nameField.getText().toString() != null && !nameField.getText().toString().equals("")) {
+        if(!nameField.getText().toString().equals("")) {
             // Log the action
             Log.d("ListExample", "addContact " + nameField.getText().toString());
             // Make a new contact
